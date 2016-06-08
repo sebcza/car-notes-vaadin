@@ -61,7 +61,6 @@ public class TemplateView extends VerticalLayout implements View {
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
-
         setSizeFull();
         setHeight("100%");
     }
@@ -85,6 +84,14 @@ public class TemplateView extends VerticalLayout implements View {
                     @Override
                     public void buttonClick(Button.ClickEvent event) {
                         navigator.navigateTo(ADDVIEW);
+                    }
+                });
+
+        goToLogin.addClickListener(
+                new Button.ClickListener() {
+                    @Override
+                    public void buttonClick(Button.ClickEvent event) {
+                        navigator.navigateTo("login");
                     }
                 });
         horizontal.addComponent(goToList);
