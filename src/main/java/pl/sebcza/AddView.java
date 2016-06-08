@@ -10,8 +10,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import static pl.sebcza.MyUI.ADDVIEW;
-import static pl.sebcza.MyUI.navigator;
-
+import static pl.sebcza.MyUI.navigator;import static pl.sebcza.MyUI.navigator;
 /**
  * Created by Sebastian on 08.06.2016.
  */
@@ -68,7 +67,7 @@ public class AddView extends  TemplateView {
     public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
         super.enter(viewChangeEvent);
         if(CarBean.loggedUser == null){
-
+            navigator.navigateTo("login");
         }
         noteDate.setValue(new Date());
         mileage.setValue("");

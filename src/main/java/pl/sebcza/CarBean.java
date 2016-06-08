@@ -16,7 +16,7 @@ public class CarBean {
 
     public static Car logIn(String logIn, String pass){
         for (Car c:carList){
-            if(c.getRegistrationNumber()==logIn && c.getPassword()==pass){
+            if(c.getRegistrationNumber().equals(logIn) && c.getPassword().equals(pass)){
                 return c;
             }
         }

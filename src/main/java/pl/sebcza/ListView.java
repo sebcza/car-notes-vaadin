@@ -7,7 +7,7 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Label;
-
+import static pl.sebcza.MyUI.navigator;
 import java.util.Collection;
 import java.util.Date;
 
@@ -52,7 +52,7 @@ public class ListView extends  TemplateView {
     public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
         super.enter(viewChangeEvent);
         if(CarBean.loggedUser == null){
-
+            navigator.navigateTo("login");
         }
         loadData();
     }

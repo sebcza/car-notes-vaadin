@@ -19,6 +19,7 @@ public class TemplateView extends VerticalLayout implements View {
     private Button goToList;
     private Button gotToAddNew;
     private Button goToLogin;
+    private Button goToLogout;
 
     public TemplateView() {
         setSizeFull();
@@ -70,6 +71,16 @@ public class TemplateView extends VerticalLayout implements View {
         goToList = new Button("Lista");
         gotToAddNew = new Button("Dodaj nową");
         goToLogin = new Button("LogIn");
+        goToLogout = new Button("Logout");
+
+        goToLogout.addClickListener(
+                new Button.ClickListener() {
+                    @Override
+                    public void buttonClick(Button.ClickEvent event) {
+                        CarBean.loggedUser = null;
+                        navigator.navigateTo("");
+                    }
+                });
 
         goToList.addClickListener(
                 new Button.ClickListener() {
@@ -94,9 +105,11 @@ public class TemplateView extends VerticalLayout implements View {
                         navigator.navigateTo("login");
                     }
                 });
+
         horizontal.addComponent(goToList);
         horizontal.addComponent(gotToAddNew);
         horizontal.addComponent(goToLogin);
+        horizontal.addComponent(goToLogout);
         menuSpace.setContent(horizontal);
 
 
