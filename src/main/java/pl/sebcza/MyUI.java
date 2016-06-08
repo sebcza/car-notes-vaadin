@@ -24,7 +24,7 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("mytheme")
 @Widgetset("pl.sebcza.MyAppWidgetset")
 public class MyUI extends UI {
-
+    protected static final String ADDVIEW = "add";
     static Navigator navigator;
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -32,10 +32,11 @@ public class MyUI extends UI {
 
         navigator = new Navigator(this, this);
         navigator.addView("", new ListView());
+        navigator.addView(ADDVIEW, new AddView());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
+    @VaadinServletConfiguration(widgetset = "pl.sebcza.MyAppWidgetset", ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }
 }

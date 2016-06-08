@@ -7,7 +7,13 @@ import java.util.Date;
  * Created by Sebastian on 08.06.2016.
  */
 public class CarNotesBean {
-
+    private static ArrayList<CarNote> carNotes = new ArrayList<CarNote>();
+    public static void AddNote(CarNote note){
+        carNotes.add(note);
+    }
+    public static ArrayList<CarNote> GetList(){
+        return carNotes;
+    }
 }
 
 class CarNote{

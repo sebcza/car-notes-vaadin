@@ -4,7 +4,8 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.*;
-
+import static pl.sebcza.MyUI.ADDVIEW;
+import static pl.sebcza.MyUI.navigator;
 import java.io.File;
 
 /**
@@ -60,6 +61,7 @@ public class TemplateView extends VerticalLayout implements View {
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
+
         setSizeFull();
         setHeight("100%");
     }
@@ -70,6 +72,21 @@ public class TemplateView extends VerticalLayout implements View {
         gotToAddNew = new Button("Dodaj nową");
         goToLogin = new Button("LogIn");
 
+        goToList.addClickListener(
+                new Button.ClickListener() {
+                    @Override
+                    public void buttonClick(Button.ClickEvent event) {
+                        navigator.navigateTo("");
+                    }
+                });
+
+        gotToAddNew.addClickListener(
+                new Button.ClickListener() {
+                    @Override
+                    public void buttonClick(Button.ClickEvent event) {
+                        navigator.navigateTo(ADDVIEW);
+                    }
+                });
         horizontal.addComponent(goToList);
         horizontal.addComponent(gotToAddNew);
         horizontal.addComponent(goToLogin);
