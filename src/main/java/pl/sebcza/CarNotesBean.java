@@ -11,10 +11,17 @@ public class CarNotesBean {
 }
 
 class CarNote{
-    private Date noteDate;
-    private int miltage;
-    private String comment;
-    private double  petrolCapacity;
+    public CarNote(Date noteDate, int miltage, String comment, double petrolCapacity) {
+        this.noteDate = noteDate;
+        this.miltage = miltage;
+        this.comment = comment;
+        this.petrolCapacity = petrolCapacity;
+    }
+
+    public Date noteDate;
+    public int miltage;
+    public String comment;
+    public double  petrolCapacity;
 
     public Date getNoteDate() {
         return noteDate;

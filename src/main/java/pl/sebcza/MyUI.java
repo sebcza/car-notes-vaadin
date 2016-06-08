@@ -31,7 +31,7 @@ public class MyUI extends UI {
         getPage().setTitle("Sebastian Czarnecki - CarNotes in Vaadin");
 
         navigator = new Navigator(this, this);
-        navigator.addView("", new TemplateView());
+        navigator.addView("", new ListView());
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

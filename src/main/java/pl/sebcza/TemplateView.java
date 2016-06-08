@@ -13,7 +13,7 @@ import java.io.File;
 public class TemplateView extends VerticalLayout implements View {
     private HorizontalLayout headerSpacer;
     private AbsoluteLayout mainSpace;
-    private VerticalLayout contentSpace;
+    protected VerticalLayout contentSpace;
     private Panel menuSpace;
     private Button goToList;
     private Button gotToAddNew;
@@ -30,7 +30,7 @@ public class TemplateView extends VerticalLayout implements View {
         menuSpace = new Panel("Menu");
         mainSpace.setSizeFull();
         contentSpace.setSizeFull();
-
+        contentSpace.setHeight(500, Unit.PIXELS);
 
         ThemeResource resource = new ThemeResource("img/logo.png");
         Image logo = new Image("", resource);
